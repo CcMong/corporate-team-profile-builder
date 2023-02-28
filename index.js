@@ -89,15 +89,9 @@ function createNewManager() {
     .prompt(managerQuestions)
     .then((answers) => {
 
-        console.log(answers);
-
         const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
 
-        console.log(manager);
-
         fullTeam.push(manager);
-
-        console.log(fullTeam);
 
         teamMemberIds.push(answers.managerId);
 
