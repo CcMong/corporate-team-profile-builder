@@ -105,5 +105,31 @@ function createNewManager() {
     })
 };
 
+// Function to prompt the user about specifying and adding new members to the team.
+
+function addMoreTeamMembers() {
+
+    inquirer
+    .prompt([
+        {
+            type: "list",
+            name: "newTeamMember",
+            message: "Which team member would you like to add?",
+            choices: [
+                "Engineer",
+                "Intern",
+                "None. I am done building my team."
+            ]
+        }
+    ])
+    .then((chosenMember) => {
+
+        chosenMember.newTeamMember === "Engineer" ? addNewEngineer() 
+        : chosenMember.newTeamMember === "Intern" ? addNewIntern()
+        : displayTeam()
+        
+    })
+};
+
 
 
