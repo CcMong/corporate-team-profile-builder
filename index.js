@@ -303,7 +303,9 @@ function displayTeam() { // fs.writeFileSync(file path, data, options)
 
     fs.writeFileSync(outputPath, render(fullTeam), "utf-8");
 
-}
+};
+
+
 
 
 

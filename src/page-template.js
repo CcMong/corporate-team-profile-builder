@@ -1,8 +1,10 @@
-// creates the team
+// Function to generate the team
+
 const generateTeam = team => {
 
-    // creates the manager html
+    // Creates the HTML code for the Manager Profile Card
     const generateManager = manager => {
+
         return `
         <div class="card employee-card">
         <div class="card-header">
@@ -20,8 +22,9 @@ const generateTeam = team => {
         `;
     };
 
-    // creates the html for engineers
+    // Creates the HTML code for the Engineers Profile Card
     const generateEngineer = engineer => {
+
         return `
         <div class="card employee-card">
     <div class="card-header">
@@ -39,8 +42,9 @@ const generateTeam = team => {
         `;
     };
 
-    // creates the html for interns
+    // Creates the HTML code for the Interns Profile Card
     const generateIntern = intern => {
+
         return `
         <div class="card employee-card">
     <div class="card-header">
@@ -57,6 +61,8 @@ const generateTeam = team => {
 </div>
         `;
     };
+
+    // Declare an array, into which cards rendered as a result of the profiles generated can be pushed.
 
     const html = [];
 
@@ -79,7 +85,8 @@ const generateTeam = team => {
 
 }
 
-// exports function to generate entire page
+// Exports function to generate the entire page
+
 module.exports = team => {
 
     return `
