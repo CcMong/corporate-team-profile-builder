@@ -1,0 +1,23 @@
+{
+  "name": "corporate-team-profile-builder",
+  "version": "1.0.0",
+  "description": "A command-line application that takes in information about employees within a corporate team and generates an HTML webpage that displays summarised profiles for each employee.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CcMong/corporate-team-profile-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CcMong/corporate-team-profile-builder/issues"
+  },
+  "homepage": "https://github.com/CcMong/corporate-team-profile-builder#readme"
+}
