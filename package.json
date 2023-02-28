@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "test": "jest --verbose text"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.2",
+    "jest": "^27.5.1"
+  },
   "bugs": {
     "url": "https://github.com/CcMong/corporate-team-profile-builder/issues"
   },
