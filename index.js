@@ -213,6 +213,71 @@ function addNewEngineer() {
 
 };
 
+/*INTERN PROFILE
+-----------------*/
+
+// Questions for receiving user input, via inquirer, to create Intern profile
+
+const internQuestions = [ // For intern, I need name, id, email and school
+    {
+        type: "input",
+        name: "internName",
+        message: "Please enter the intern's name.",
+        validate(answer) { // User must enter a name consisting of at least one character
+
+            if(!answer) {
+                return "Please enter a valid name containing one or more characters.";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "internId",
+        message: "Please enter the intern's ID.",
+        validate(answer) {
+
+            const validId = answer.match(/^[1-9]\d*$/);
+
+            if(!validId) { // User must enter a whole number above zero
+                return "Invalid ID! Please enter a non-negative integer.";
+            } else if(teamMemberIds.includes(answer)) {
+
+                return "ID already exists and is unavailable. Please enter another ID."
+
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "internEmail",
+        message: "Please enter the intern's email address.",
+        validate(answer) { // Format of user input should be something like xxx@xxx.xxx
+
+            const validEmail = answer.match(/^\S+@\S+\.\S+$/); // Not ironclad validation, but sufficient to flag basic user input errors like spaces in between, no period or no domain
+            if(!validEmail) {
+                return "Invalid email! Please enter a valid email address.";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What college/school/university do you currently attend?",
+        validate(answer) { // User must enter a name consisting of at least one 
+            
+            if(!answer) {
+                return "Please enter a valid username containing one or more characters.";
+            }
+            return true;
+        }
+    }
+];
+
+
+
 
 
 
