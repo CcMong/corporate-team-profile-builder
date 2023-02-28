@@ -18,7 +18,7 @@ const render = require("./src/page-template.js");
 /*MANAGER PROFILE
 ------------------*/
 
-// Questions for receiving user inputs, via inquirer, to create manager profile
+// Questions for receiving user inputs, via inquirer, to create the Manager profile
 
 const managerQuestions = [ // For manager, I need name, id, email, office number
     {
@@ -74,5 +74,36 @@ const managerQuestions = [ // For manager, I need name, id, email, office number
             return true;
         }
     }
-]
+];
+
+// Function to create a new Manager profile
+
+// First declare two arrays: one into which we will push in all the team member objects as we create them, and the second to put the team member IDs to ensure that they cannot be duplicated
+
+const fullTeam = [];
+const teamMemberIds = [];
+
+function createNewManager() {
+
+    inquirer
+    .prompt(managerQuestions)
+    .then((answers) => {
+
+        console.log(answers);
+
+        const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
+
+        console.log(manager);
+
+        fullTeam.push(manager);
+
+        console.log(fullTeam);
+
+        teamMemberIds.push(answers.managerId);
+
+        addMoreTeamMembers();
+    })
+};
+
+
 
