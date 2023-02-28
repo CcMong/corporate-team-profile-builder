@@ -305,6 +305,19 @@ function displayTeam() { // fs.writeFileSync(file path, data, options)
 
 };
 
+// Function to initiate the program
+
+function initiateApplication() {    
+
+    console.log("Build your team's profile, starting with the manager.");
+
+    createNewManager();
+
+};
+
+// Calling the function to start the program:
+
+initiateApplication();
 
 
 
