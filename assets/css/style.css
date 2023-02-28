@@ -1,0 +1,22 @@
+.team-heading {
+    background-color: tomato;
+    color: white;
+}
+
+.card-title {
+    color: white;
+}
+
+.card-header {
+    background-color: royalblue;
+    text-align: center;
+}
+
+.card-body {
+    background-color: rgb(235, 234, 234);
+}
+
+.employee-card {
+    margin: 10px;
+    box-shadow: 5px 5px 3px silver;
+}
