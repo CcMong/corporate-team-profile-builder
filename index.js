@@ -131,5 +131,70 @@ function addMoreTeamMembers() {
     })
 };
 
+/*ENGINEER PROFILE
+-------------------*/
+
+// Questions for receiving user input, via inquirer, to create Engineer profile
+
+const engineerQuestions = [ // For engineer, I need name, id, email and github username
+    {
+        type: "input",
+        name: "engineerName",
+        message: "Please enter the engineer's name.",
+        validate(answer) { // User must enter a name consisting of at least one character
+            if(!answer) {
+                return "Please enter a valid name containing one or more characters.";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "engineerId",
+        message: "Please enter the engineer's ID.",
+        validate(answer) {
+
+            const validId = answer.match(/^[1-9]\d*$/);
+
+            if(!validId) { // User must enter a whole number above zero
+                return "Invalid ID! Please enter a non-negative integer.";
+
+            } else if(teamMemberIds.includes(answer)) {
+
+                return "ID already exists and is unavailable. Please enter another ID."
+
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "engineerEmail",
+        message: "Please enter the engineer's email address.",
+        validate(answer) { // Format of user input should be something like xxx@xxx.xxx
+
+            const validEmail = answer.match(/^\S+@\S+\.\S+$/); // Not ironclad validation, but sufficient to flag basic user input errors like spaces in between, missing period or domain, etc
+
+            if(!validEmail) {
+                return "Invalid email! Please enter a valid email address.";
+            }
+            return true;
+        }
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is the engineer's Github username?",
+        validate(answer) { // User must enter a name consisting of at least one character
+            if(!answer) {
+                return "Please enter a valid username containing one or more characters.";
+            }
+            return true;
+        }
+    }
+];
+
+
+
 
 
