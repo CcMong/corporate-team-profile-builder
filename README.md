@@ -42,6 +42,14 @@ When the program is run using the `node index.js` command, the user will be prom
 
 Once the manager profile has been created, the user will be prompted to add more team members. This will continue until the user indicates that the team profile is complete. Then HTML code will be rendered using the user input, and an HTML file will be created in an `output` folder.  
 
+The HTML rendered from the team profile information will be displayed on a webpage as shown below:
+
+![Screenshot of the Generated HTML on a Webpage](./assets/images/team-profile-screenshot.JPG)
+
+
+
+
+
 <div id="credits"></div>  
 
 ## Credits  
