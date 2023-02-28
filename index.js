@@ -276,6 +276,35 @@ const internQuestions = [ // For intern, I need name, id, email and school
     }
 ];
 
+// Function to add a new intern to the team
+
+function addNewIntern() {
+
+    inquirer
+    .prompt(internQuestions)
+    .then((answers) => {
+
+        const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.school);
+
+        fullTeam.push(intern);
+
+        teamMemberIds.push(answers.internId);
+
+        addMoreTeamMembers();
+    })
+
+};
+
+// Function to display the team when the team profile building process is complete
+
+function displayTeam() { // fs.writeFileSync(file path, data, options)
+
+    // The file path is to the team.html file in the output folder in the root directory. The 'render' function takes an array of team member objects and generates the corresponding HTML code using the template(s) created, before creating an HTML file
+
+    fs.writeFileSync(outputPath, render(fullTeam), "utf-8");
+
+}
+
 
 
 
