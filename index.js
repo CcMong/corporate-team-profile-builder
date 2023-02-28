@@ -194,6 +194,27 @@ const engineerQuestions = [ // For engineer, I need name, id, email and github u
     }
 ];
 
+// Function to add a new engineer to the team
+
+function addNewEngineer() {
+
+    inquirer
+    .prompt(engineerQuestions)
+    .then((answers) => {
+
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
+
+        fullTeam.push(engineer);
+
+        teamMemberIds.push(answers.engineerId);
+
+        addMoreTeamMembers();
+    })
+
+};
+
+
+
 
 
 
